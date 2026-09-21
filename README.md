@@ -12,13 +12,17 @@ Practical work includes implementing processing steps, validating results and ex
 
 - [Lab topics](docs/lab-map.md)
 - [Lab 03: data quality](labs/03-Data%20quality%20and%20integration/03_data_quality.ipynb)
-- [Lab descriptions and exercises](lab-guides/)
+- [Lab materials](labs/)
 - [Project submissions](project/projects-overview.md)
 - [Docker setup](docs/container-release.md)
 
 ## Contents
 
 The repository currently includes the 14 lab descriptions and the complete Lab 03 notebook, with its data and exercises. Other notebooks will be added as they are ready.
+
+Each folder in `labs/` contains the overview for that session as `README.md`.
+Exercises, notebooks, datasets and presentation files belong in the same lab
+folder. Shared project requirements and submissions are in `project/`.
 
 ## Run the notebook
 
@@ -49,6 +53,10 @@ Lab 03 runs locally. You do not need a cloud account or a sensor kit for it.
 ## Assessment
 
 The final grade is **60% exam and 40% laboratory**. The lab project has an intermediate submission and a final presentation in Lab 14. The project brief will give the detailed requirements and grading criteria.
+
+Selected labs include optional exercises. Where an exercise covers part of the
+project, the brief will explain how that work can be reused. Requirements and
+deadlines will be published before assessed work begins.
 
 ## Data and reuse
 

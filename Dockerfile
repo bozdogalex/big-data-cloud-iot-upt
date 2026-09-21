@@ -8,7 +8,6 @@ RUN pip install --no-cache-dir -r requirements-lock.txt
 RUN useradd --create-home --uid 1000 student && chown student:student /workspace
 COPY --chown=student:student labs ./labs
 COPY --chown=student:student LICENSE LICENSE-CONTENT.md THIRD_PARTY_NOTICES.md README.md ./
-COPY --chown=student:student lab-guides ./lab-guides
 COPY --chown=student:student project ./project
 COPY --chown=student:student docs ./docs
 USER student
