@@ -2,7 +2,7 @@
 
 ## BIDMC physiological measurements
 
-The source recording and teaching excerpts in `labs/03-data-quality/data/`
+The source recording and teaching excerpts in `labs/03-Data quality and integration/data/`
 come from the BIDMC PPG and Respiration Dataset v1.0.0 on PhysioNet.
 The data use the **Open Data Commons Attribution License v1.0**.
 The original licence is preserved in that directory as `LICENSE.txt`.

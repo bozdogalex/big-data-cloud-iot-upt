@@ -18,7 +18,7 @@ jobs:
         run: docker build --label org.opencontainers.image.revision="$GITHUB_SHA" -t bdciot-lab:verify .
       - name: Execute and check notebook
         run: |
-          docker run --rm --entrypoint sh bdciot-lab:verify -c 'cd labs/03-data-quality && jupyter nbconvert --execute --to notebook 03_data_quality.ipynb --output /tmp/verified.ipynb && python verify_results.py'
+          docker run --rm --entrypoint sh bdciot-lab:verify -c 'cd "labs/03-Data quality and integration" && jupyter nbconvert --execute --to notebook 03_data_quality.ipynb --output /tmp/verified.ipynb && python verify_results.py'
       - name: Authenticate with GHCR
         if: inputs.publish
         env:

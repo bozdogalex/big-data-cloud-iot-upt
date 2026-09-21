@@ -7,7 +7,7 @@ from jupyter_server.serverapp import list_running_servers
 
 server = next(list_running_servers())
 request = urllib.request.Request(
-    server['url'].rstrip('/') + '/api/contents/labs/03-data-quality/03_data_quality.ipynb',
+    server['url'].rstrip('/') + '/api/contents/labs/03-Data%20quality%20and%20integration/03_data_quality.ipynb',
     headers={'Authorization': 'token ' + server['token']},
 )
 with urllib.request.urlopen(request, timeout=10) as response:

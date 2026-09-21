@@ -16,7 +16,7 @@ The repository contains Docker instructions and the guided Lab 03 notebook. Star
 
 - [Open laboratory repository](https://github.com/bozdogalex/big-data-cloud-iot-upt)
 - [Environment and container instructions](https://github.com/bozdogalex/big-data-cloud-iot-upt/blob/main/docs/container-release.md)
-- [Lab 03 notebook](https://github.com/bozdogalex/big-data-cloud-iot-upt/blob/main/labs/03-data-quality/03_data_quality.ipynb)
+- [Lab 03 notebook](https://github.com/bozdogalex/big-data-cloud-iot-upt/blob/main/labs/03-Data%20quality%20and%20integration/03_data_quality.ipynb)
 
 Original teaching text is available under CC BY 4.0; original code uses MIT.
 The dataset retains its source licence and attribution, documented in the repository.

@@ -24,6 +24,6 @@ Use the separate optional Data quality exercise to compare completeness threshol
 
 ## Materials
 
-Open `labs/03-data-quality/03_data_quality.ipynb` in the course environment. The recording and instructions are included in the repository.
+Open `labs/03-Data quality and integration/03_data_quality.ipynb` in the course environment. The recording and instructions are included in the repository.
 
 The optional exercise is described separately in the Data quality exercise activity.

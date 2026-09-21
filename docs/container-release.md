@@ -14,7 +14,7 @@ docker compose -f compose.release.yaml logs lab
 
 Open the localhost Jupyter URL shown in the logs, including its login token.
 Keep the token private. Navigate to
-`labs/03-data-quality/03_data_quality.ipynb` and use **Run → Run All Cells**.
+`labs/03-Data quality and integration/03_data_quality.ipynb` and use **Run → Run All Cells**.
 
 The release configuration pins an immutable image digest and stores notebooks
 in a named Docker volume, initially populated from the image. Stop with:

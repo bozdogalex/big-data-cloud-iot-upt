@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LAB = ROOT / 'labs/03-data-quality'
+LAB = ROOT / 'labs/03-Data quality and integration'
 DATA = LAB / 'data'
 rows = list(csv.DictReader((DATA / 'bidmc_01_Numerics.csv').open()))
 reference = [(int(r['Time [s]']), float(r[' HR'])) for r in rows if int(r['Time [s]']) < 180]

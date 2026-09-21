@@ -11,8 +11,9 @@ Practical work includes implementing processing steps, validating results and ex
 ## Start here
 
 - [Lab topics](docs/lab-map.md)
-- [Lab 03: data quality](labs/03-data-quality/03_data_quality.ipynb)
-- [Lab descriptions and exercises](moodle/)
+- [Lab 03: data quality](labs/03-Data%20quality%20and%20integration/03_data_quality.ipynb)
+- [Lab descriptions and exercises](lab-guides/)
+- [Project submissions](project/projects-overview.md)
 - [Docker setup](docs/container-release.md)
 
 ## Contents
@@ -34,12 +35,12 @@ docker compose -f compose.release.yaml logs lab
 ```
 
 Open the localhost Jupyter URL from the logs. The notebook is under
-`labs/03-data-quality/03_data_quality.ipynb`. The release uses a persistent Docker
+`labs/03-Data quality and integration/03_data_quality.ipynb`. The release uses a persistent Docker
 volume for your work and targets linux/amd64.
 
 ### Build from source
 
-With Docker Desktop's Linux engine running, execute `docker compose up --build` from this directory. Open `http://127.0.0.1:8888/lab?token=...` using the token printed in the logs, and navigate to `labs/03-data-quality/03_data_quality.ipynb`. Select **Run → Run All Cells**. Authentication remains enabled. The local `labs` folder is mounted so saved work persists. Stop with `docker compose down`.
+With Docker Desktop's Linux engine running, execute `docker compose up --build` from this directory. Open `http://127.0.0.1:8888/lab?token=...` using the token printed in the logs, and navigate to `labs/03-Data quality and integration/03_data_quality.ipynb`. Select **Run → Run All Cells**. Authentication remains enabled. The local `labs` folder is mounted so saved work persists. Stop with `docker compose down`.
 
 Alternatively, create and activate a Python 3.12 virtual environment, run `python -m pip install -r requirements.txt`, then `python -m jupyter lab`.
 
@@ -53,4 +54,4 @@ The final grade is **60% exam and 40% laboratory**. The lab project has an inter
 
 Original code is licensed under [MIT](LICENSE); teaching notes and explanations are licensed under [CC BY 4.0](LICENSE-CONTENT.md). The materials may be reused and adapted under these terms.
 
-The example includes BIDMC data; its separate licence, attribution and teaching modifications are documented in [data provenance](labs/03-data-quality/data/README.md). See [third-party notices](THIRD_PARTY_NOTICES.md) for the scope of these licences.
+The example includes BIDMC data; its separate licence, attribution and teaching modifications are documented in [data provenance](labs/03-Data%20quality%20and%20integration/data/README.md). See [third-party notices](THIRD_PARTY_NOTICES.md) for the scope of these licences.
