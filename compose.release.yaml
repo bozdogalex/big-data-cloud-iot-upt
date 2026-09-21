@@ -1,11 +1,11 @@
 services:
   lab:
-    image: ghcr.io/bozdogalex/big-data-cloud-iot-upt@sha256:a9e7308106fbec0d717942fe2a165dbc6de4a5ce1021081f9881e971d318b77c
+    image: ghcr.io/bozdogalex/big-data-cloud-iot-upt@sha256:e678ecb78658d8b77d2b2955bd7b088c4f555167ed3eeec73955d96dced8b2c5
     platform: linux/amd64
     ports:
       - "127.0.0.1:8888:8888"
     volumes:
-      - lab-work-2026-09-21-v2:/workspace/labs
+      - lab-work-2026-09-21-v3:/workspace/labs
 
 volumes:
-  lab-work-2026-09-21-v2:
+  lab-work-2026-09-21-v3:
