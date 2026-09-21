@@ -1,5 +1,5 @@
 * text=auto eol=lf
 # Preserve the exact dataset bytes used by SHA256SUMS.json on all platforms.
-*.csv -text
+*.csv -text whitespace=cr-at-eol
 *.png binary
 *.zip binary

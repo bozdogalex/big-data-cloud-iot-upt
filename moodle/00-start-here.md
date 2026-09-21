@@ -13,3 +13,10 @@ The laboratory contributes 40% of the discipline grade; the examination contribu
 ## Working environment
 
 The repository contains Docker instructions and the guided Lab 03 notebook. Start with the environment guide before the practical session. Save your notebook regularly; keep your own copy of your work.
+
+- [Open laboratory repository](https://github.com/bozdogalex/big-data-cloud-iot-upt)
+- [Environment and container instructions](https://github.com/bozdogalex/big-data-cloud-iot-upt/blob/main/docs/container-release.md)
+- [Lab 03 notebook](https://github.com/bozdogalex/big-data-cloud-iot-upt/blob/main/labs/03-data-quality/03_data_quality.ipynb)
+
+Original teaching text is available under CC BY 4.0; original code uses MIT.
+The dataset retains its source licence and attribution, documented in the repository.

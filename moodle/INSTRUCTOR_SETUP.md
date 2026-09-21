@@ -1,5 +1,16 @@
 # Moodle setup guide
 
+Use [COURSE_STRUCTURE.md](COURSE_STRUCTURE.md) as the ordered setup checklist.
+The two assignment description files are hidden instructor drafts pending the
+final project brief. Existing lab pages and the Lab 03 activity are retained.
+
+For paste-ready HTML and an offline preview, run
+`python scripts/package_moodle.py` in the notebook environment (uses its installed
+Mistune renderer). The package is written to `artifacts/moodle-upload.zip`.
+HTML fragments can be pasted into the Page editor's HTML/source view; Markdown
+can be used where the course editor exposes that format. This is manual page
+content, not an automatic course restore/import archive.
+
 ## Recommended structure
 
 1. **Start here:** one Page containing `00-start-here.md`; add the repository/environment link when ready.
