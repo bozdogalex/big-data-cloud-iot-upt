@@ -10,7 +10,14 @@ OUT.mkdir(parents=True, exist_ok=True)
 render = mistune.create_markdown(escape=True, plugins=['table'])
 style = 'body{font:17px/1.6 system-ui,sans-serif;max-width:1050px;margin:48px auto;padding:0 28px;color:#17212b}a{color:#075ca8}h1,h2{line-height:1.25}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #ccd4db;padding:8px;text-align:left}code{background:#edf1f4;padding:2px 4px}nav{padding:16px;background:#eef4f8}section{border-top:1px solid #ccd4db;margin-top:32px;padding-top:16px}'
 items = []
-for source in sorted((ROOT / 'moodle').glob('*.md')):
+order = ['00-start-here', 'projects-overview', 'assignment-intermediate', 'assignment-final']
+for number in range(1,15):
+    order.append(f'lab-{number:02d}')
+    if number == 3:
+        order.append('exercise-03-data-quality')
+order += ['COURSE_STRUCTURE', 'INSTRUCTOR_SETUP']
+for name in order:
+    source = ROOT / 'moodle' / f'{name}.md'
     value = source.read_text(encoding='utf-8')
     title = value.splitlines()[0].removeprefix('# ')
     body = render(value)
@@ -24,6 +31,8 @@ nav = ''.join(f'<li><a href="#{escape(key)}">{escape(title)}</a></li>' for key,t
 sections = ''.join(f'<section id="{escape(key)}">{body}</section>' for key,_,body in items)
 preview = f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDCIOT — prepared Campus Virtual content</title><style>{style}</style><body><h1>BDCIOT — prepared Campus Virtual content</h1><p>Local preview of upload-ready pages. This is not the live Campus Virtual course.</p><nav><ul>{nav}</ul></nav>{sections}</body></html>'
 (OUT / 'index.html').write_text(preview, encoding='utf-8')
+for name in ['LICENSE-CONTENT.md', 'THIRD_PARTY_NOTICES.md']:
+    (OUT / name).write_text((ROOT / name).read_text(encoding='utf-8'), encoding='utf-8')
 with ZipFile(ROOT / 'artifacts/moodle-upload.zip', 'w', ZIP_DEFLATED) as archive:
     for path in sorted(OUT.iterdir()):
         archive.write(path, path.name)

@@ -1,5 +1,26 @@
 # Verification record
 
+## Published release — 21 September 2026
+
+- Public repository: https://github.com/bozdogalex/big-data-cloud-iot-upt.
+- Image source commit: `3063f1f30fbb89304b667a65c309833373cf408b`.
+- Successful build, notebook execution and publication:
+  https://github.com/bozdogalex/big-data-cloud-iot-upt/actions/runs/35595342430.
+- Verified anonymous pull using an empty Docker client configuration.
+- Published image digest: `sha256:aa5b901a9f6c484d4da4a9f1022ba7705ee9b34fcfc3272bcbee9fa41821bcee`.
+- Ran the published image via `compose.release.yaml` with a new persistent volume.
+  Notebook execution, data checksums, duplicate removal, coverage, reference
+  agreement and plot generation passed. `pip check` passed.
+- Authenticated Jupyter notebook API access and volume write/read/delete checks passed.
+- Original code uses MIT; original teaching text uses CC BY 4.0. BIDMC data
+  retain the source licence and attribution.
+- Prepared 21 Moodle Markdown sources with HTML fragments and an offline preview.
+  Visually checked the Lab 03 learning-sequence page. These are manual-upload
+  materials; deployment to Campus Virtual is pending service availability.
+- Execution was verified on linux/amd64. Native ARM execution is not verified.
+
+## Earlier local preparation
+
 15 September 2026.
 
 - Executed every cell of `03_data_quality.ipynb` successfully using a project-local Python 3.12 environment with the specified dependencies. Outputs are saved in the notebook.

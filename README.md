@@ -27,6 +27,17 @@ This repository contains the semester map, 14 Moodle lab page sources and a runn
 The container package is distributed through [GHCR](https://github.com/bozdogalex/big-data-cloud-iot-upt/pkgs/container/big-data-cloud-iot-upt).
 See [release instructions](docs/container-release.md) for the verified release and immutable digest.
 
+```sh
+git clone https://github.com/bozdogalex/big-data-cloud-iot-upt.git
+cd big-data-cloud-iot-upt
+docker compose -f compose.release.yaml up -d
+docker compose -f compose.release.yaml logs lab
+```
+
+Open the localhost Jupyter URL from the logs. The notebook is under
+`labs/03-data-quality/03_data_quality.ipynb`. The release uses a persistent Docker
+volume for your work and targets linux/amd64.
+
 ### Build from source
 
 With Docker Desktop's Linux engine running, execute `docker compose up --build` from this directory. Open `http://127.0.0.1:8888/lab?token=...` using the token printed in the logs, and navigate to `labs/03-data-quality/03_data_quality.ipynb`. Select **Run → Run All Cells**. Authentication remains enabled. The local `labs` folder is mounted so saved work persists. Stop with `docker compose down`.
