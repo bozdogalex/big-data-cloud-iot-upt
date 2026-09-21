@@ -1,4 +1,4 @@
-"""Generate teaching notebooks and Moodle pages from reviewable source."""
+"""Generate the Lab 03 notebook and its data excerpts."""
 import csv
 import hashlib
 import json
@@ -29,11 +29,9 @@ def code(text):
 
 md('''# Lab 03 — Can we trust this heart-rate summary?
 
-**A guided introduction to data quality**
+We will use three minutes of heart-rate measurements, with one reading expected per second. Some messages have been repeated and others are missing. Start by inspecting the data, then remove the duplicates and check what is still missing.
 
-We have three minutes of heart-rate measurements, with one expected reading per second. A message may arrive twice, or fail to arrive. We will inspect the data, remove exact duplicate messages and identify gaps.
-
-By the end, you can explain why an average alone is not enough to judge a dataset. No signal processing, cloud account or machine-learning model is needed.
+Does a reasonable-looking average mean the data is complete?
 
 The original measurements come from the public **BIDMC PPG and Respiration Dataset v1.0.0**, recording 01. The missing and repeated messages were introduced deliberately for this exercise. Time is elapsed recording time, not a patient's calendar timestamp. See `data/README.md` for provenance and licence information.''')
 md('''## 1. Read the received measurements
@@ -120,16 +118,16 @@ md('''## 6. Explain what happened
 3. Can an average look reasonable while its coverage is poor?
 4. Why would replacing missing heart rates with zero change the meaning of the data?
 
-**Your answer:** replace this paragraph with a short explanation. A small or unchanged average is also a result: do not claim a large effect when the numbers do not show one.''')
+**Your answer:** write a short explanation here and refer to the table or plot. If the average barely changes, explain why checking the reading count still matters.''')
 md('''## Optional exercise — Flag incomplete minutes
 
 Change the threshold below to flag any minute with fewer than **54 of 60** readings. Run the cell and explain what changes if you instead require all 60 readings. This marks uncertainty; it does not repair missing observations.''')
 code('''minimum_readings = 54
 comparison['needs_review'] = comparison['available_readings'] < minimum_readings
 comparison[['available_readings', 'coverage_percent', 'needs_review']]''')
-md('''## Takeaway
+md('''## Summary
 
-A successful calculation is not evidence that all measurements arrived. Report an average together with the amount of data supporting it, and make your duplicate/missing-data policy explicit.
+The average alone does not tell us whether all the readings arrived. Include the reading count or coverage when reporting it, and explain how you handled duplicates and missing values.
 
 ### Sources
 
@@ -140,34 +138,5 @@ notebook = dict(cells=cells, metadata={'kernelspec': {'display_name':'Python 3',
 for i, cell in enumerate(cells): cell['id'] = f'lab03-{i:02d}'
 (LAB / '03_data_quality.ipynb').write_text(json.dumps(notebook, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 
-topics = [
-('Introduction to Big Data and IoT', 'Connect sensors, data storage, processing and analytical results through a biomedical example.', 'Conceptual introduction and a short prepared pipeline demonstration; a small modification is optional.'),
-('Storage formats and analytical SQL', 'Compare CSV and Parquet and query telemetry with SQL.', 'Inspect storage size and query results; introduce the role of object storage.'),
-('Data quality and integration', 'Identify duplicates and missing observations and interpret their effects.', 'Run the guided heart-rate notebook; compare an average with the available readings.'),
-('Batch and distributed processing', 'Use transformations, aggregation and joins to process data.', 'Compare equivalent results and discuss when distributed processing is justified.'),
-('Performance and incremental updates', 'Compare processing choices using runtime and equivalent results.', 'Performance is the main exercise; new-recording updates are a short guided extension.'),
-('IoT ingestion and replay', 'Understand producers, consumers, event timestamps and message arrival.', 'Explore recorded telemetry in a prepared ingestion setup.'),
-('Stream processing', 'Explain time windows, late arrivals and replay behaviour.', 'Compare window results under controlled event arrival; inspect recovery behaviour.'),
-('Temporal features and ML evaluation', 'Build temporal features and recognise data leakage.', 'Justify subject, session or time-based evaluation splits.'),
-('ML workflows in the cloud', 'Run and evaluate a baseline and compare data-preparation choices.', 'Inspect runtime and resource use; introduce architecture through the cloud workflow.'),
-('Document ingestion and retrieval', 'Prepare documents while preserving source metadata.', 'Explore parsing, chunking, indexing and retrieved evidence.'),
-('RAG evaluation observability and security', 'Trace an answer to evidence and investigate failures.', 'Use guided cases involving citations, missing evidence, source changes and indirect prompt injection.'),
-('Reproducible execution', 'Reproduce a workflow and verify selected output properties.', 'Use containers, environment specifications and automated checks.'),
-('Integrated troubleshooting', 'Diagnose one failure in a familiar pipeline.', 'Inspect prepared logs, metrics and data checks; trace the cause and verify a correction.'),
-('Project presentations', 'Present results and explain individual decisions and contributions.', 'Project demonstration, discussion of evidence and limitations, and questions.')]
-moodle = ROOT / 'moodle'
-moodle.mkdir(exist_ok=True)
-for i, (title, outcome, activity) in enumerate(topics, 1):
-    text=f'# Lab {i:02d} — {title}\n\n## What you will learn\n\n{outcome}\n\n## Session outline\n\n{activity}\n'
-    if i == 3:
-        existing = moodle / 'lab-03.md'
-        if existing.exists():
-            previous = existing.read_text(encoding='utf-8')
-            start = previous.find('## Before the lab')
-            end = previous.find('## Materials', start)
-            if start >= 0 and end > start:
-                text += '\n' + previous[start:end]
-        text += '\n## Materials\n\nOpen `labs/03-data-quality/03_data_quality.ipynb` in the course environment. The recording and instructions are included in the repository.\n\nThe optional exercise is described separately in the Data quality exercise activity.\n'
-    (moodle / f'lab-{i:02d}.md').write_text(text, encoding='utf-8')
-(ROOT / 'docs/lab-map.md').write_text('# Laboratory map\n\n14 sessions of two academic hours.\n\n' + '\n'.join(f'{i}. **{t}** — {o}' for i,(t,o,a) in enumerate(topics,1)) + '\n', encoding='utf-8')
-print('Generated notebook, CSV excerpts, checksums and 14 Moodle lab pages.')
+# Moodle pages are maintained directly; regenerating the notebook must not overwrite them.
+print('Generated Lab 03 notebook, CSV excerpts and checksums.')

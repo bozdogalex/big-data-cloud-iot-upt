@@ -1,31 +1,30 @@
 # Big Data in Cloud and IoT — UPT
 
-Laboratory materials under development for the Cloud Computing and Internet of Things master's programme at Universitatea Politehnica Timișoara, academic year 2026–2027.
+Laboratory materials for **Big Data in Cloud and IoT**, part of the Cloud Computing and Internet of Things master's programme at Universitatea Politehnica Timișoara, 2026–2027.
 
-## What you will investigate
+## About the lab
 
-How do data-handling choices affect an analytical result? This laboratory follows recorded physiological telemetry through ingestion, storage, batch and stream processing, quality checks, feature construction and evaluation. Supporting technical documents introduce retrieval, source attribution and updates.
+The laboratory uses physiological recordings to study data ingestion, storage, quality assessment, processing and machine-learning evaluation. Further topics include document retrieval, retrieval-augmented generation (RAG) and pipeline troubleshooting.
 
-The emphasis is on explaining results, comparing alternatives and reproducing the processing steps.
+Practical work includes implementing processing steps, validating results and explaining the choices made. Reproducibility is part of each analysis.
 
 ## Start here
 
-- [Semester laboratory map](docs/lab-map.md)
-- [Runnable data-quality notebook](labs/03-data-quality/03_data_quality.ipynb)
-- [Moodle setup and pages](moodle/INSTRUCTOR_SETUP.md)
-- [Container and GHCR instructions](docs/container-release.md)
-- [Preparation roadmap](docs/roadmap.md)
+- [Lab topics](docs/lab-map.md)
+- [Lab 03: data quality](labs/03-data-quality/03_data_quality.ipynb)
+- [Lab descriptions and exercises](moodle/)
+- [Docker setup](docs/container-release.md)
 
-## Current status
+## Contents
 
-This repository contains the semester map, 14 Moodle lab page sources and a runnable introductory data-quality notebook with an attributed public heart-rate excerpt. The remaining lab pages describe their learning scope. See [verification status](docs/verification.md) for execution results and container limitations.
+The repository currently includes the 14 lab descriptions and the complete Lab 03 notebook, with its data and exercises. Other notebooks will be added as they are ready.
 
 ## Run the notebook
 
 ### Published environment
 
 The container package is distributed through [GHCR](https://github.com/bozdogalex/big-data-cloud-iot-upt/pkgs/container/big-data-cloud-iot-upt).
-See [release instructions](docs/container-release.md) for the verified release and immutable digest.
+See [Docker setup](docs/container-release.md) for instructions.
 
 ```sh
 git clone https://github.com/bozdogalex/big-data-cloud-iot-upt.git
@@ -44,14 +43,14 @@ With Docker Desktop's Linux engine running, execute `docker compose up --build` 
 
 Alternatively, create and activate a Python 3.12 virtual environment, run `python -m pip install -r requirements.txt`, then `python -m jupyter lab`.
 
-The planned core exercises use recorded data and locally executable tools. Paid cloud accounts and physical sensor hardware are not planned prerequisites.
+Lab 03 runs locally. You do not need a cloud account or a sensor kit for it.
 
 ## Assessment
 
-The laboratory contributes 40% of the discipline grade; the examination contributes 60%. The approved discipline sheet and published Campus Virtual requirements govern assessment. Detailed laboratory grading is being finalised.
+The final grade is **60% exam and 40% laboratory**. The lab project has an intermediate submission and a final presentation in Lab 14. The project brief will give the detailed requirements and grading criteria.
 
 ## Data and reuse
 
-Original code is available under [MIT](LICENSE), and original teaching text under [CC BY 4.0](LICENSE-CONTENT.md). You can reuse and adapt the educational materials with attribution. The editable notebooks, source files and container recipe are included.
+Original code is licensed under [MIT](LICENSE); teaching notes and explanations are licensed under [CC BY 4.0](LICENSE-CONTENT.md). The materials may be reused and adapted under these terms.
 
 The example includes BIDMC data; its separate licence, attribution and teaching modifications are documented in [data provenance](labs/03-data-quality/data/README.md). See [third-party notices](THIRD_PARTY_NOTICES.md) for the scope of these licences.

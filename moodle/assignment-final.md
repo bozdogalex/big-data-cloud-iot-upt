@@ -1,13 +1,11 @@
 # Project — final submission
 
-**Instructor draft: keep hidden until the project brief and assessment settings are finalised.**
+The detailed project brief and deadline will be added before submissions open.
 
-This activity is the final submission point for the same laboratory project.
-Submit the final project code or repository reference, reproducible execution
-instructions, selected results and a short explanation of decisions and limitations.
-Identify individual contributions and prepare to explain the workflow during
-the Lab 14 presentation and discussion.
+Submit the final implementation or a repository link, execution instructions,
+and the results to be presented in Lab 14. Explain the main design choices,
+validation methods and limitations. State each participant's contribution.
 
-The project brief will specify the required scope, submission format, assessment
-criteria, individual/group arrangements and deadline before assessed work begins.
-The laboratory contributes 40% of the discipline grade; the examination contributes 60%.
+The presentation includes a demonstration and questions about the implementation.
+Consult the project brief for the required scope, file formats and grading criteria.
+The laboratory contributes 40% of the final grade; the exam contributes 60%.

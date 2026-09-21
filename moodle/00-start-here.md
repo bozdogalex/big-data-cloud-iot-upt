@@ -1,14 +1,14 @@
 # Big Data in Cloud and IoT — Laboratory
 
-This laboratory follows biomedical telemetry from measurements to analytical results. You will explore storage, data quality, processing, cloud workflows and supporting technical documentation.
+The laboratory covers the storage, processing and analysis of biomedical recordings. It also addresses information retrieval from technical documents and the evaluation of answers produced by retrieval-augmented generation (RAG).
 
-Each lab section contains a short overview. Presentations and practical materials are added to the corresponding section. Optional exercises appear as separate activities in selected sections.
+Each section contains the description and materials for that lab. Some labs also have a separate optional exercise.
 
 ## Projects and assessment
 
-Project briefs, milestones and submission activities are collected in the Projects section. Optional exercises may fulfil corresponding project milestone requirements, as specified in each brief, without repeating equivalent work.
+You will work on one project, with an intermediate submission and a final submission. Use the Projects section for requirements, submissions and feedback. Where an optional exercise covers part of the project, the brief will explain how you can reuse that work.
 
-The laboratory contributes 40% of the discipline grade; the examination contributes 60%. Detailed criteria and milestone mappings will be provided with the project briefs. Lab 14 is reserved for presentations and discussion.
+The final grade is 60% exam and 40% laboratory. Project requirements and grading criteria will be published before the assessed work starts. Lab 14 is for project presentations and questions.
 
 ## Working environment
 

@@ -1,7 +1,7 @@
 # Project and milestones
 
-The working assessment model is one project developed through milestones, followed by a presentation in Lab 14. Optional exercises in selected labs may satisfy corresponding milestone requirements.
+You will develop one project during the semester and present it in Lab 14.
 
-The project brief will define deliverables, criteria and exercise mappings before assessed work begins. Two submission activities are proposed for milestones; their precise boundaries remain to be agreed.
+There are two submission points: an intermediate version for feedback and the final version. The project brief will specify what to submit, the deadlines and how the work is graded. These details will be published before you start the assessed work.
 
-Use the Projects section for submissions and feedback. Relevant lab sections will link to the corresponding milestone.
+Some optional lab exercises can be used in the project. The brief will explain which ones, so you do not have to repeat the same work.
