@@ -1,0 +1,38 @@
+name: Verify and publish lab container
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish verified image to GHCR
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  packages: write
+jobs:
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: docker build --label org.opencontainers.image.revision="$GITHUB_SHA" -t bdciot-lab:verify .
+      - name: Execute and check notebook
+        run: |
+          docker run --rm --entrypoint sh bdciot-lab:verify -c 'cd labs/03-data-quality && jupyter nbconvert --execute --to notebook 03_data_quality.ipynb --output /tmp/verified.ipynb && python verify_results.py'
+      - name: Authenticate with GHCR
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "$GH_TOKEN" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Publish commit image
+        if: inputs.publish
+        env:
+          REPOSITORY: ${{ github.repository }}
+          REVISION: ${{ github.sha }}
+        run: |
+          IMAGE="ghcr.io/${REPOSITORY,,}:${REVISION}"
+          docker tag bdciot-lab:verify "$IMAGE"
+          docker push "$IMAGE"
+          docker tag bdciot-lab:verify "ghcr.io/${REPOSITORY,,}:latest"
+          docker push "ghcr.io/${REPOSITORY,,}:latest"
+          echo "Published $IMAGE. Record the digest from this push for classroom use." >> "$GITHUB_STEP_SUMMARY"

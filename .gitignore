@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+data/raw/
+data/processed/
+outputs/
+.DS_Store
+Thumbs.db
+tmp*_kernels/
+artifacts/
